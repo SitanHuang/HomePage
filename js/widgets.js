@@ -26,6 +26,8 @@ function _widget_new(widget, order, opts={}) {
 
     widget: widget,
 
+    css: '',
+
     redraw: false,
     order: order,
   }), opts;
@@ -52,7 +54,11 @@ function widget_reload() {
 
     __widget_scope[widget.render](daemon);
 
-    daemon.$ele?.addClass('controlled');
+    if (daemon.$ele) {
+      daemon.$ele
+        .addClass('controlled')
+        .attr('style', daemon.$ele.attr('style') + ';' + widget.css);
+    }
   }
 
   // start redraw intervals
@@ -70,4 +76,8 @@ function widget_redraw() {
 
 function _widget_append_greeter($ele) {
   _main_con.find('.greeters').append($ele);
+}
+
+function _widget_append_card($ele) {
+  _main_con.find('.cards').append($ele);
 }

@@ -30,6 +30,8 @@ body {
 }
 
 .card {
+  --height: 500px;
+
   background-color: var(--card-background);
 
   border: 1px solid var(--card-border);
@@ -39,4 +41,22 @@ body {
 #console .console-input,
 .console-sandbox>ul>li {
   border-color: var(--card-border);
+}
+
+.card.iframe {
+  --zoom: 0.75;
+
+  padding: 0;
+  overflow: hidden;
+  height: calc(var(--height));
+}
+
+.card.iframe iframe {
+  width: calc(100% / var(--zoom));
+  height: calc(var(--height) / var(--zoom));
+  border: 0;
+  outline: 0;
+
+  transform: scale(var(--zoom));
+  transform-origin: 0 0;
 }
