@@ -1,0 +1,42 @@
+:root {
+  --primary-color: black;
+
+  --body-background: white;
+  --backdrop-background: #F5F5F5;
+  --body-color: rgba(0, 0, 0, 0.85);
+
+  --card-background: var(--body-background);
+  --card-border: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background: #161B22;
+    --backdrop-background: #353b44;
+    --body-color: white;
+
+    --card-border: #5E6062;
+  }
+}
+
+html {
+  color: var(--body-color);
+
+  background-color: var(--body-background);
+}
+
+body {
+  background-color: var(--backdrop-background);
+}
+
+.card {
+  background-color: var(--card-background);
+
+  border: 1px solid var(--card-border);
+}
+
+#console .console-sandbox>ul,
+#console .console-input,
+.console-sandbox>ul>li {
+  border-color: var(--card-border);
+}

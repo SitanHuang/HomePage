@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab</title>
+
+  <!-- Library CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Roboto:200,300,400,600,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Roboto Mono:200,300,400,600,700,900" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css" rel="stylesheet" media="(prefers-color-scheme: light)">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <link href="https://rawgit.com/edwinv710/embedConsole/master/css/embed-console.css" rel="stylesheet">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/theme.css">
+
+  <!-- External JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+
+  <script src="https://unpkg.com/squirrelly"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/javascript.min.js"></script>
+  <script src="js/external/embed-console.js"></script>
+
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="js/external/humanize-duration.js"></script>
+</head>
+<body>
+  &nbsp; <!-- prevents gap above body as first element cannot have margin -->
+  <dir class="main-con">
+    <div class="greeters"></div>
+    <div class="cards"></div>
+    <div class="card console-con">
+      <dir id="console"></dir>
+    </div>
+  </dir>
+
+  <!-- My JS -->
+  <script src="js/data.js"></script>
+  <script src="js/stringEngine.js"></script>
+  <script src="js/widgets.js"></script>
+
+  <script src="js/console.js"></script>
+
+  <script src="js/widgets/string.js"></script>
+  <script src="js/widgets/event.js"></script>
+  <script src="js/widgets/iframe.js"></script>
+
+  <script src="js/index.js"></script>
+
+  <!-- Configs -->
+  <script src="configs/default.config.js"></script>
+  <script src="configs/sitan.config.js"></script>
+</body>
+</html>
