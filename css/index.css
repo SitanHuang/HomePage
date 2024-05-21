@@ -22,16 +22,10 @@ body {
 .main-con {
   height: fit-content;
   width: min(100dvw - 0.75rem * 2, 1024px);
-  /* max-height: 100dvh; */
-
-  /* overflow: auto; */
 
   margin-inline: auto;
   margin-top: 0.75rem;
-  /* margin: auto;
-
-  position: fixed;
-  inset: 0; */
+  padding-bottom: 0.75rem;
 }
 
 .card {
@@ -39,6 +33,12 @@ body {
   margin-top: 0.75rem;
 
   border-radius: 5px;
+
+  float: left;
+  margin-right: 0.325rem;
+
+  width: 100%;
+  max-width: calc(100dvw - 0.75rem * 2);
 }
 
 /* Console */
@@ -102,4 +102,5 @@ greeter {
 greeter event-name {
   font-style: italic;
   text-decoration: underline;
+  font-family: var(--default-family);
 }

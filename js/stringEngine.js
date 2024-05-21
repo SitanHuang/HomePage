@@ -13,15 +13,16 @@ function string_replace_with_daemon(string, daemon, opts = {}) {
   }, opts));
 }
 
-function _string_duration_diff(it, date, opts={}) {
+function string_duration_diff(it, date, opts={}) {
   date = date || it.daemon.widget._diff;
 
   opts = Object.assign({
-    units: (opts?.units || "y,mo,w,d").split(","),
     largest: 3,
     round: true,
     delimiter: " "
   }, opts);
+
+  opts.units = (opts?.units || "y,mo,w,d").split(",");
 
   const diff = moment(date).diff(moment().endOf('day'));
 
@@ -31,4 +32,20 @@ function _string_duration_diff(it, date, opts={}) {
     str = (diff < 0 ? '+' : '-') + "(" + str + ")";
 
   return str;
+}
+
+function string_perc_time_between(start, end) {
+  // const start = moment(startTime, 'HH:mm:ss');
+  // const end = moment(endTime, 'HH:mm:ss');
+
+  // Get current time
+  const now = moment();
+
+  if (now.isBefore(start))
+    return 0;
+
+  const totalDuration = end.diff(start);
+  const elapsedDuration = now.diff(start);
+
+  return Math.round((elapsedDuration / totalDuration) * 1000) / 10;
 }

@@ -33,5 +33,5 @@ function _string_render(daemon) {
 
   const ele = daemon.$ele;
 
-  ele.html(string_replace_with_daemon(daemon.widget._string, daemon));
+  ele.html(string_replace_with_daemon(daemon.widget._string, daemon).trim());
 }
