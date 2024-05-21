@@ -98,6 +98,7 @@ var EmbedConsole = ( function() {
 
     this.id       = (Math.random() + 1).toString(36).substring(16);
     this.highlightCallback = opts.highlight ||  defaultHighlightCallback;
+    this.autocompleteCallback = opts.autocomplete;
     this.elements = buildLayout( containterId );
 
 
@@ -109,7 +110,22 @@ var EmbedConsole = ( function() {
         if ( /\S/.test(value) ) sbox.execute( value );
       }
       else if ( e.which === 38 ) { e.preventDefault(); sbox.history.traverseUp( this );   }
-      else if ( e.which === 40 ) { e.preventDefault(); sbox.history.traverseDown( this ); };
+      else if ( e.which === 40 ) { e.preventDefault(); sbox.history.traverseDown( this ); }
+      else if (e.which === 9 && sbox.autocompleteCallback ) {
+        e.preventDefault();
+
+        let result = sbox.autocompleteCallback(value);
+        if (result)
+          this.innerText = result;
+
+        let range = document.createRange();
+        range.selectNodeContents(this);
+        if (result)
+          range.collapse(false);
+        let selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
     }
   };
 
